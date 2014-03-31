@@ -21,7 +21,7 @@ Game.prototype.PAIRS = {
 }
 
 Game.prototype.winner = function() {
-	if (this.samePick()) {
+	if (this._samePick()) {
 		return null;
 	}
 	if (this.PAIRS[this.player1.pick].indexOf(this.player2.pick) != -1){
@@ -32,7 +32,7 @@ Game.prototype.winner = function() {
 	}
 }
 
-Game.prototype.samePick = function() {
+Game.prototype._samePick = function() {
 	return this.player1.pick == this.player2.pick;
 }
 

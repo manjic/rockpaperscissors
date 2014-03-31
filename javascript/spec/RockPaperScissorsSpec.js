@@ -206,4 +206,26 @@ describe('winning and losing', function() {
 
       });
     });
+
+
+describe('winning message', function() {
+  it('should say Player 1 won when Player 1 wins', function() {
+      player1.picks('rock');
+      player2.picks('scissors');
+    expect(game.winningMessage()).toEqual('rock beats scissors. Player 1 wins.');
+  })
+
+  it ('should say Player 2 wins when Player 2 wins', function(){
+      player1.picks('rock');
+      player2.picks('paper');
+    expect(game.winningMessage()).toEqual('rock is beaten by paper. Player 2 wins.');
+  })
+  it ('should say draw when there is a draw', function(){
+    player1.picks('rock');
+    player2.picks('rock');
+    expect(game.winningMessage()).toEqual('Draw!');
+  })
+})
+
+
   });

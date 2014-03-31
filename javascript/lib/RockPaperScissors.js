@@ -35,3 +35,15 @@ Game.prototype.winner = function() {
 Game.prototype.samePick = function() {
 	return this.player1.pick == this.player2.pick;
 }
+
+Game.prototype.winningMessage = function() {
+	if(this.winner() == this.player1) {
+		return this.player1.pick + ' beats ' + this.player2.pick + '. Player 1 wins.';
+	}
+	else if(this.winner() == this.player2) {
+		return this.player1.pick + ' is beaten by ' + this.player2.pick + '. Player 2 wins.';
+	}
+	else {
+		return 'Draw!'
+	}
+};
